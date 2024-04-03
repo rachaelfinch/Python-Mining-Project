@@ -1,0 +1,38 @@
+#Use DeepNote for this project
+#Run each block of code separately like below
+
+# Data Manipulation
+!pip install pandas
+import pandas as pd
+
+# Data Visualization
+!pip install matplotlib
+import matplotlib.pyplot as plt
+
+# Data Visualization
+!pip install seaborn
+import seaborn as sns
+
+#Import csv file
+df = pd.read_csv('MiningProcess_Flotation_Plant_Database.csv',decimal=",")
+
+#Show first 5 rows of the data & all the columns
+df.head()
+
+#(Rows, Columns)
+df.shape
+
+#Return specifics rows and columns, return rows 100-104 and all the columns
+df["% Iron Concentrate"]
+df.iloc[100:105,:]
+
+#Print type
+print(type(df))
+print(type(df["date"]))
+print(type(df["date"][0]))
+
+#Convert date from string to date time
+df["date"]=pd.to_datetime(df["date"])
+
+#Return count, means, min, max, std, 25%, 50%, and 75%
+df.describe()
